@@ -1,0 +1,17 @@
+{
+  "name": "studio.shortsleeve.unityobservables",
+  "displayName": "Unity Observables",
+  "author": {
+    "name": "Short Sleeve Studio",
+    "url": "https://voodoodetective.com"
+  },
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "Events and observables implemented as ScriptableObjects.",
+  "keywords": [
+    "events",
+    "observables",
+    "scriptableobject",
+    "unity"
+  ]
+}
