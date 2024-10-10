@@ -12,10 +12,11 @@ namespace Studio.ShortSleeve.UnityObservables
 
         // The runtime value does change at runtime
         // We'll show this at runtime, hide it during edit time
-        [NonSerialized] protected TPayload _runtimeValue;
+        [SerializeField] protected TPayload _runtimeValue;
 
         // Tracks whether the runtime value has been initialized
         [NonSerialized] private bool _isRuntimeValueInitialized;
+
 
         #region Public API
 

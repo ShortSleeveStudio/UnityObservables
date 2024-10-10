@@ -4,28 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="266dedef-3326-4e02-b878-522529652764" name="Changes" comment="" />
+    <list default="true" id="266dedef-3326-4e02-b878-522529652764" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityObservables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityObservables/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBus.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlerWrappers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlerWrappers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventBool.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventBool.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventDouble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventDouble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventFloat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventFloat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventGeneric.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventGeneric.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventInt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventInt.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventLong.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventLong.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector3.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVoid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVoid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/Observable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/Observable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableBool.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableBool.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableDouble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableDouble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableFloat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableFloat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableInt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableInt.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableLong.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableLong.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector3.cs.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/38/e9fd416a/IEquatable`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Tester.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Events/EventGeneric.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/Observable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableBool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableDouble.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableFloat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableInt.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableLong.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector3.cs" root0="FORCE_HIGHLIGHTING" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/01/516adaa8/EditorGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/5d/435141ca/EditorGUILayout.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/7a/76dfb251/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/7e/40a6af89/CustomEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/aa/ff14889b/SerializedProperty.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/d2/105ea02c/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/38/e9fd416a/IEquatable`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/04/617e3056/GUILayout.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/24/9ea01b5b/GUIStyle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/41/96d7fb9e/GUILayoutOption.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/47/1d261c0e/GUIContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/81/0f7accef/GUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/a6/f48da181/GUISkin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e585f5e2b21741c8a3a65b4f9abfa5e8572e20/1e/7916a14d/PropertyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e585f5e2b21741c8a3a65b4f9abfa5e8572e20/25/5077454e/BindingFlags.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e585f5e2b21741c8a3a65b4f9abfa5e8572e20/71/55e88480/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tester.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nB13bOCTtsmh81d1Yo2ZlpiFCu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +91,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,6 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728431456294</updated>
       <workItem from="1728431457387" duration="11727000" />
+      <workItem from="1728508366554" duration="16239000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,7 @@ namespace Studio.ShortSleeve.UnityObservables
         #endregion
 
 
-        private readonly List<EventHandlerWrapper<TPayload>> _eventHandlerList;
+        private readonly List<EventHandlerWrapper<TPayload>> _eventHandlerList; // custom editor, don't change name
         private readonly Dictionary<object, EventHandlerWrapper<TPayload>> _eventHandlerMap;
 
         protected EventBus()
@@ -33,39 +33,6 @@ namespace Studio.ShortSleeve.UnityObservables
 
         public int SubscriptionCount => _eventHandlerList.Count;
 
-        protected void SubscribeInternal(EventHandler handler)
-        {
-            if (IsSubscribed(handler)) return;
-            Subscribe(new EventHandlerWrapperDelegateVoid<TPayload>(handler));
-        }
-
-        protected void SubscribeInternal(EventHandler<TPayload> handler)
-        {
-            if (IsSubscribed(handler)) return;
-            Subscribe(new EventHandlerWrapperDelegateGeneric<TPayload>(handler));
-        }
-
-        protected void SubscribeInternal(IEventHandler handler)
-        {
-            if (IsSubscribed(handler)) return;
-            Subscribe(new EventHandlerWrapperInterfaceVoid<TPayload>(handler));
-        }
-
-        protected void SubscribeInternal(IEventHandler<TPayload> handler)
-        {
-            if (IsSubscribed(handler)) return;
-            Subscribe(new EventHandlerWrapperInterfaceGeneric<TPayload>(handler));
-        }
-
-        protected void UnsubscribeInternal(EventHandler handler) => Unsubscribe(handler);
-
-        protected void UnsubscribeInternal(EventHandler<TPayload> handler) => Unsubscribe(handler);
-
-        protected void UnsubscribeInternal(IEventHandler handler) => Unsubscribe(handler);
-
-        protected void UnsubscribeInternal(IEventHandler<TPayload> handler) => Unsubscribe(handler);
-
-
         public void Raise(TPayload payload)
         {
             for (int i = SubscriptionCount - 1; i >= 0; i--)
@@ -77,6 +44,42 @@ namespace Studio.ShortSleeve.UnityObservables
             _eventHandlerMap.Clear();
             _eventHandlerList.Clear();
         }
+
+        #endregion
+
+        #region Protected API
+
+        protected void SubscribeInternal(EventHandler handler)
+        {
+            if (IsSubscribed(handler)) return;
+            Subscribe(new EventHandlerWrapper<TPayload>(handler));
+        }
+
+        protected void SubscribeInternal(EventHandler<TPayload> handler)
+        {
+            if (IsSubscribed(handler)) return;
+            Subscribe(new EventHandlerWrapper<TPayload>(handler));
+        }
+
+        protected void SubscribeInternal(IEventHandler handler)
+        {
+            if (IsSubscribed(handler)) return;
+            Subscribe(new EventHandlerWrapper<TPayload>(handler));
+        }
+
+        protected void SubscribeInternal(IEventHandler<TPayload> handler)
+        {
+            if (IsSubscribed(handler)) return;
+            Subscribe(new EventHandlerWrapper<TPayload>(handler));
+        }
+
+        protected void UnsubscribeInternal(EventHandler handler) => Unsubscribe(handler);
+
+        protected void UnsubscribeInternal(EventHandler<TPayload> handler) => Unsubscribe(handler);
+
+        protected void UnsubscribeInternal(IEventHandler handler) => Unsubscribe(handler);
+
+        protected void UnsubscribeInternal(IEventHandler<TPayload> handler) => Unsubscribe(handler);
 
         #endregion
 
