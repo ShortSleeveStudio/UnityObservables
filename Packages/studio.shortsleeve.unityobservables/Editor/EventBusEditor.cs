@@ -61,7 +61,7 @@ namespace Studio.ShortSleeve.UnityObservables
             DrawDefaultInspector();
         }
 
-        protected void DrawEventHandlers()
+        void DrawEventHandlers()
         {
             if (_eventHandlerListField == null)
             {

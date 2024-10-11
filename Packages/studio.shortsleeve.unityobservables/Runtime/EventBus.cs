@@ -19,7 +19,6 @@ namespace Studio.ShortSleeve.UnityObservables
 
         #endregion
 
-
         private readonly List<EventHandlerWrapper<TPayload>> _eventHandlerList; // custom editor, don't change name
         private readonly Dictionary<object, EventHandlerWrapper<TPayload>> _eventHandlerMap;
 
