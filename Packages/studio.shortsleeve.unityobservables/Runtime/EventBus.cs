@@ -15,7 +15,7 @@ namespace Studio.ShortSleeve.UnityObservables
     {
         #region Inspector
 
-        [TextArea(1, 3)] [SerializeField] private string developerNotes;
+        [SerializeField] private string developerNotes;
 
         #endregion
 
