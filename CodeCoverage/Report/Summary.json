@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "generatedon": "2024-10-11T05:09:01Z",
+    "parser": "MultiReportParser (2x OpenCoverParser)",
+    "assemblies": 4,
+    "classes": 10,
+    "files": 10,
+    "coveredlines": 0,
+    "uncoveredlines": 375,
+    "coverablelines": 375,
+    "totallines": 845,
+    "linecoverage": 0,
+    "coveredbranches": 0,
+    "totalbranches": 0,
+    "coveredmethods": 0,
+    "totalmethods": 70,
+    "methodcoverage": 0
+ },
+  "coverage": {
+    "assemblies": [
+      { "name": "Assembly-CSharp", "classes": 1, "coverage": 0, "coveredlines": 0, "coverablelines": 27, "totallines": 49, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 6, "classesinassembly": [
+        { "name": "Tester", "coverage": 0, "coveredlines": 0, "coverablelines": 27, "totallines": 49, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 6 } ] },
+      { "name": "Studio.ShortSleeve.UnityObservables.Editor", "classes": 3, "coverage": 0, "coveredlines": 0, "coverablelines": 138, "totallines": 290, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 10, "classesinassembly": [
+        { "name": "Studio.ShortSleeve.UnityObservables.EventBusEditor", "coverage": 0, "coveredlines": 0, "coverablelines": 72, "totallines": 154, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 6 },
+        { "name": "Studio.ShortSleeve.UnityObservables.IconPostProcessor", "coverage": 0, "coveredlines": 0, "coverablelines": 37, "totallines": 72, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 },
+        { "name": "Studio.ShortSleeve.UnityObservables.ObservableGenericEditor", "coverage": 0, "coveredlines": 0, "coverablelines": 29, "totallines": 64, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 } ] },
+      { "name": "Studio.ShortSleeve.UnityObservables.Runtime", "classes": 5, "coverage": 0, "coveredlines": 0, "coverablelines": 129, "totallines": 340, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 39, "classesinassembly": [
+        { "name": "Studio.ShortSleeve.UnityObservables.EventBus[TPayload]", "coverage": 0, "coveredlines": 0, "coverablelines": 47, "totallines": 109, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 15 },
+        { "name": "Studio.ShortSleeve.UnityObservables.EventGeneric[TPayload]", "coverage": 0, "coveredlines": 0, "coverablelines": 5, "totallines": 11, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 5 },
+        { "name": "Studio.ShortSleeve.UnityObservables.EventHandlerWrapper[TPayload]", "coverage": 0, "coveredlines": 0, "coverablelines": 49, "totallines": 138, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "Studio.ShortSleeve.UnityObservables.EventVoid", "coverage": 0, "coveredlines": 0, "coverablelines": 5, "totallines": 14, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 5 },
+        { "name": "Studio.ShortSleeve.UnityObservables.Observable[TPayload]", "coverage": 0, "coveredlines": 0, "coverablelines": 23, "totallines": 68, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 5 } ] },
+      { "name": "Tests", "classes": 1, "coverage": 0, "coveredlines": 0, "coverablelines": 81, "totallines": 166, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 15, "classesinassembly": [
+        { "name": "Studio.ShortSleeve.UnityObservables.EventBusTest", "coverage": 0, "coveredlines": 0, "coverablelines": 81, "totallines": 166, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 15 } ] } ]
+  }
+}

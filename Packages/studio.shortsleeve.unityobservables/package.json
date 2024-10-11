@@ -6,11 +6,11 @@
     "url": "https://voodoodetective.com"
   },
   "version": "1.0.0",
-  "unity": "2022.3",
+  "unity": "2021.2",
   "description": "Events and observables implemented as ScriptableObjects.",
   "keywords": [
-    "events",
-    "observables",
+    "event",
+    "observable",
     "scriptableobject",
     "unity"
   ]

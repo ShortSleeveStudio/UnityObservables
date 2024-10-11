@@ -6,50 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="266dedef-3326-4e02-b878-522529652764" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityObservables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityObservables/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventBus.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlerWrappers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlerWrappers.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/EventHandlers.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventBool.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventBool.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventDouble.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventDouble.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventFloat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventFloat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventGeneric.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventGeneric.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventInt.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventInt.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventLong.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventLong.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVector3.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVoid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Events/EventVoid.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/Observable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/Observable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableBool.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableBool.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableDouble.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableDouble.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableFloat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableFloat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableInt.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableInt.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableLong.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableLong.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Observables/ObservableVector3.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Observables/ObservableInt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Observables/ObservableInt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tester.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Editor/EventBusEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Editor/EventBusEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Editor/ObservableEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Editor/ObservableEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/EventBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/EventBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/EventHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/EventHandlers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventBool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventBool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventDouble.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventDouble.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventFloat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventFloat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventGeneric.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventGeneric.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventInt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventInt.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventLong.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventLong.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVector2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVector2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVector3.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVector3.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVoid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVoid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Events/EventVoid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableBool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableBool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableDouble.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableDouble.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableFloat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableFloat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableInt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableInt.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableLong.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableLong.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableVector2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableVector2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableVector3.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityObservables/Runtime/Observables/ObservableVector3.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +45,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/01/516adaa8/EditorGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/10/ad2ccb73/MonoImporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/5d/435141ca/EditorGUILayout.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/68/858cc7df/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/7a/76dfb251/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/7e/40a6af89/CustomEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/aa/ff14889b/SerializedProperty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/d2/105ea02c/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/d3/59faba32/AssetPostprocessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e74aaecc5d24ba79f82222a4901f73195c800/d3/92acc5f8/MonoScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50e5acd061cd4a73b7fc8eecbf07e915176600/22/e88a9a6b/TextAreaAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/38/e9fd416a/IEquatable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/04/617e3056/GUILayout.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9953c8b718944232b780cdbafb1fcd692d600/24/9ea01b5b/GUIStyle.cs" root0="SKIP_HIGHLIGHTING" />
@@ -78,6 +67,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e585f5e2b21741c8a3a65b4f9abfa5e8572e20/71/55e88480/Array.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Tester.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Editor/IconPostProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityObservables/Tests/Runtime/NewTestScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -150,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728431456294</updated>
       <workItem from="1728431457387" duration="11727000" />
-      <workItem from="1728508366554" duration="16239000" />
+      <workItem from="1728508366554" duration="30037000" />
     </task>
     <servers />
   </component>

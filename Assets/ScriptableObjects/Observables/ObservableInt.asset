@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   developerNotes: 
   _editorValue: 10
+  _runtimeValue: 12
