@@ -1,0 +1,19 @@
+{
+    "name": "Studio.ShortSleeve.UnityObservables.Editor.SerializedReferences",
+    "rootNamespace": "Studio.ShortSleeve.UnityObservables",
+    "references": [
+        "GUID:66e7445cc455d3a4496f031f96ecf850",
+        "GUID:e199b8f73d32fc54eb26f3f5ae12efc9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

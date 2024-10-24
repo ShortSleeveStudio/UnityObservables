@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757977812}
-  - component: {fileID: 757977811}
+  - component: {fileID: 757977813}
   m_Layer: 0
   m_Name: Tester Object
   m_TagString: Untagged
@@ -276,20 +276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &757977811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757977810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec5b061c4bedcd4bad3c25fc1b9d109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventVoid: {fileID: 11400000, guid: 33922558453d3de49a711f97db0be57e, type: 2}
-  observableInt: {fileID: 11400000, guid: ae9e07eac15c7664b8b5188c2c668793, type: 2}
 --- !u!4 &757977812
 Transform:
   m_ObjectHideFlags: 0
@@ -305,6 +291,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757977813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757977810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec5b061c4bedcd4bad3c25fc1b9d109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventAssetVoid: {fileID: 11400000, guid: 33922558453d3de49a711f97db0be57e, type: 2}
+  observableAssetInt: {fileID: 11400000, guid: ae9e07eac15c7664b8b5188c2c668793, type: 2}
+  eventVoid:
+    rid: 8736006361635880964
+  observableInt:
+    rid: 8736006361635880965
+  references:
+    version: 2
+    RefIds:
+    - rid: 8736006361635880964
+      type: {class: EventVoid, ns: Studio.ShortSleeve.UnityObservables, asm: Studio.ShortSleeve.UnityObservables.Runtime.SerializedReferences}
+      data:
+        developerNotes: 
+        raisePayload: 0
+    - rid: 8736006361635880965
+      type: {class: ObservableInt, ns: Studio.ShortSleeve.UnityObservables, asm: Studio.ShortSleeve.UnityObservables.Runtime.SerializedReferences}
+      data:
+        developerNotes: 
+        raisePayload: 0
+        value: 25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

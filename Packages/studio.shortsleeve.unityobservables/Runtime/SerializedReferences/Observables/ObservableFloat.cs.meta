@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: dec5b061c4bedcd4bad3c25fc1b9d109
+guid: b1f217f741577344ab5c216e462646f6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - eventAssetVoid: {instanceID: 0}
-  - observableAssetInt: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

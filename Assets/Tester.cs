@@ -1,26 +1,28 @@
 using Studio.ShortSleeve.UnityObservables;
 using UnityEngine;
 
-public class Tester : MonoBehaviour, IEventHandler<int>
+public class Tester : MonoBehaviour
 {
-    [SerializeField] private EventVoid eventVoid;
-    [SerializeField] private ObservableInt observableInt;
+    [SerializeField] private EventAssetVoid eventAssetVoid;
+    [SerializeField] private ObservableAssetInt observableAssetInt;
+    [SerializeReference] private EventVoid eventVoid = new();
+    [SerializeReference] private ObservableInt observableInt = new();
 
     private float _timeSinceLastRaise;
 
     void OnEnable()
     {
-        observableInt.Subscribe(OnEventFired0);
-        observableInt.Subscribe(OnEventFired1);
-        observableInt.Subscribe(HandleEvent);
+        observableAssetInt.Subscribe(OnObservableAssetFired);
+        eventAssetVoid.Subscribe(OnEventAssetVoidFired);
+        observableInt.Subscribe(OnObservableIntFired);
         eventVoid.Subscribe(OnEventVoidFired);
     }
 
     void OnDisable()
     {
-        observableInt.Unsubscribe(OnEventFired0);
-        observableInt.Unsubscribe(OnEventFired1);
-        observableInt.Unsubscribe(HandleEvent);
+        observableAssetInt.Unsubscribe(OnObservableAssetFired);
+        eventAssetVoid.Unsubscribe(OnEventAssetVoidFired);
+        observableInt.Unsubscribe(OnObservableIntFired);
         eventVoid.Unsubscribe(OnEventVoidFired);
     }
 
@@ -28,6 +30,7 @@ public class Tester : MonoBehaviour, IEventHandler<int>
     {
         if (_timeSinceLastRaise > 1f)
         {
+            observableAssetInt.Value++;
             observableInt.Value++;
             _timeSinceLastRaise = 0;
         }
@@ -35,23 +38,23 @@ public class Tester : MonoBehaviour, IEventHandler<int>
         _timeSinceLastRaise += Time.deltaTime;
     }
 
+    void OnEventAssetVoidFired()
+    {
+        Debug.Log("EventAssetVoid fired");
+    }
+
+    void OnObservableAssetFired(int value)
+    {
+        Debug.Log("ObservableAsset: " + value);
+    }
+
     void OnEventVoidFired()
     {
-        Debug.Log("Event void fired");
+        Debug.Log("EventVoid fired");
     }
 
-    void OnEventFired0(int value)
+    public void OnObservableIntFired(int value)
     {
-        Debug.Log("Value 0: " + value);
-    }
-
-    void OnEventFired1(int value)
-    {
-        Debug.Log("Value 1: " + value);
-    }
-
-    public void HandleEvent(int value)
-    {
-        Debug.Log("Value 2: " + value);
+        Debug.Log("Observable: " + value);
     }
 }

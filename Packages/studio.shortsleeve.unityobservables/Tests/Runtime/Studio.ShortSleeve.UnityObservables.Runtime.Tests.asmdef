@@ -4,7 +4,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Studio.ShortSleeve.UnityObservables.Runtime"
+        "Studio.ShortSleeve.UnityObservables.Runtime.ScriptableObjects",
+        "Studio.ShortSleeve.UnityObservables.Runtime.Common"
     ],
     "includePlatforms": [
         "Editor"
