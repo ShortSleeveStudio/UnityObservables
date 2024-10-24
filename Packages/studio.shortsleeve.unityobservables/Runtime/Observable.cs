@@ -63,6 +63,11 @@ namespace Studio.ShortSleeve.UnityObservables
             _runtimeValue = _editorValue;
         }
 
+#if UNITY_EDITOR
+        // custom editor, don't change name
+        private void RaiseObservableFromEditor() => RaiseInternal(_runtimeValue);
+#endif
+
         #endregion
     }
 }

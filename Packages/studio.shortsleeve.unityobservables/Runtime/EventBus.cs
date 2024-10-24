@@ -16,6 +16,9 @@ namespace Studio.ShortSleeve.UnityObservables
         #region Inspector
 
         [SerializeField] private string developerNotes;
+#if UNITY_EDITOR
+        [SerializeField] private TPayload raisePayload; // custom editor, don't change name
+#endif
 
         #endregion
 
@@ -102,6 +105,12 @@ namespace Studio.ShortSleeve.UnityObservables
         }
 
         private bool IsSubscribed(object handler) => _eventHandlerMap.ContainsKey(handler);
+
+
+#if UNITY_EDITOR
+        // custom editor, don't change name
+        private void RaiseEventFromEditor() => RaiseInternal(raisePayload);
+#endif
 
         #endregion
     }

@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec5b061c4bedcd4bad3c25fc1b9d109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventVoid: {fileID: 11400000, guid: 33922558453d3de49a711f97db0be57e, type: 2}
   observableInt: {fileID: 11400000, guid: ae9e07eac15c7664b8b5188c2c668793, type: 2}
 --- !u!4 &757977812
 Transform:

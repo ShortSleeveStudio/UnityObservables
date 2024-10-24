@@ -12,7 +12,9 @@ namespace Studio.ShortSleeve.UnityObservables
         #region Constants
 
         private const string IDField = "ID";
+        private const string RaiseMethod = "RaiseEventFromEditor";
         private const string EventHandlerListField = "_eventHandlerList";
+        protected const string RaisePayloadField = "raisePayload";
 
         #endregion
 
@@ -21,12 +23,16 @@ namespace Studio.ShortSleeve.UnityObservables
         private GUIStyle _labelColorNormal;
         private GUIStyle _labelColorError;
         private FieldInfo _eventHandlerListField;
+        private MethodInfo _raiseMethodInfo;
+        private SerializedProperty _raisePayloadProperty;
+
+        private static readonly GUIContent PayloadLabel = new("Payload");
 
         #endregion
 
         #region Unity Lifecycle
 
-        void OnEnable()
+        protected virtual void OnEnable()
         {
             // Cache fields needed for reflection
             if (_eventHandlerListField == null)
@@ -34,6 +40,19 @@ namespace Studio.ShortSleeve.UnityObservables
                 _eventHandlerListField = GetField(target.GetType(), EventHandlerListField,
                     BindingFlags.Instance | BindingFlags.NonPublic);
             }
+
+            if (_raiseMethodInfo == null)
+            {
+                _raiseMethodInfo = GetMethod(target.GetType(), RaiseMethod,
+                    BindingFlags.Instance | BindingFlags.NonPublic);
+            }
+
+            // Cache properties needed for drawing properties out of order
+            if (_raisePayloadProperty == null)
+            {
+                _raisePayloadProperty = serializedObject.FindProperty(RaisePayloadField);
+            }
+
 
             // Styles
             _labelColorNormal = new();
@@ -50,18 +69,31 @@ namespace Studio.ShortSleeve.UnityObservables
         {
             DrawProperties();
             DrawEventHandlers();
+            DrawRaiseButton();
         }
 
         #endregion
 
         #region Draw Methods
 
-        protected virtual void DrawProperties()
+        private void DrawProperties()
         {
-            DrawDefaultInspector();
+            EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
+            EditorGUI.BeginChangeCheck();
+            serializedObject.UpdateIfRequiredOrScript();
+            SerializedProperty serializedProperty = serializedObject.GetIterator();
+            serializedProperty.Next(true);
+            while (serializedProperty.NextVisible(false))
+            {
+                if (!DidCustomizeProperty(serializedProperty))
+                    EditorGUILayout.PropertyField(serializedProperty);
+            }
+
+            serializedObject.ApplyModifiedProperties();
+            EditorGUI.EndChangeCheck();
         }
 
-        void DrawEventHandlers()
+        private void DrawEventHandlers()
         {
             if (_eventHandlerListField == null)
             {
@@ -74,13 +106,15 @@ namespace Studio.ShortSleeve.UnityObservables
             if (!Application.isPlaying)
                 return;
 
+
             // Subscriber list header
-            EditorGUILayout.LabelField("Subscribers");
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Subscribers", EditorStyles.boldLabel);
 
             // Grab event handler list
             IList eventHandlerList = (IList)_eventHandlerListField.GetValue(target) ?? Array.Empty<object>();
 
-            // Explain if the list if empty
+            // Explain if the list is empty
             if (eventHandlerList.Count == 0)
             {
                 EditorGUILayout.HelpBox("There are no subscribers.", MessageType.Info);
@@ -132,11 +166,41 @@ namespace Studio.ShortSleeve.UnityObservables
             EditorGUI.EndDisabledGroup();
         }
 
+        protected virtual void DrawRaiseButton()
+        {
+            if (!Application.isPlaying)
+                return;
+
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Raise", EditorStyles.boldLabel);
+
+            // Draw payload field if needed
+            if (target is not EventVoid)
+            {
+                EditorGUI.BeginChangeCheck();
+                serializedObject.UpdateIfRequiredOrScript();
+                EditorGUILayout.PropertyField(_raisePayloadProperty, PayloadLabel);
+                serializedObject.ApplyModifiedProperties();
+                EditorGUI.EndChangeCheck();
+            }
+
+            // Draw raise button
+            if (GUILayout.Button("Raise"))
+            {
+                _raiseMethodInfo.Invoke(target, null);
+            }
+        }
+
+        protected virtual bool DidCustomizeProperty(SerializedProperty serializedProperty)
+        {
+            return serializedProperty.propertyPath == RaisePayloadField;
+        }
+
         #endregion
 
         #region Helpers
 
-        static FieldInfo GetField(Type @type, string name, BindingFlags flags)
+        protected static FieldInfo GetField(Type @type, string name, BindingFlags flags)
         {
             if (@type == null)
                 return null;
@@ -146,6 +210,18 @@ namespace Studio.ShortSleeve.UnityObservables
                 return fieldInfo;
 
             return GetField(@type.BaseType, name, flags);
+        }
+
+        protected static MethodInfo GetMethod(Type @type, string name, BindingFlags flags)
+        {
+            if (@type == null)
+                return null;
+
+            MethodInfo methodInfo = @type.GetMethod(name, flags);
+            if (methodInfo != null)
+                return methodInfo;
+
+            return GetMethod(@type.BaseType, name, flags);
         }
 
         #endregion
