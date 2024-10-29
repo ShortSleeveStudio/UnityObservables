@@ -32,8 +32,13 @@ namespace Studio.ShortSleeve.UnityObservables
             // Field Title
             EditorGUILayout.LabelField(property.displayName, EditorStyles.boldLabel);
 
-            // Grab target and cache reflection variables
-            object target = property.boxedValue;
+            // Grab target. We distinguish between SerializedReference and generic serialization. 
+            object target;
+            if (property.propertyType == SerializedPropertyType.ManagedReference)
+                target = property.boxedValue;
+            else
+                target = fieldInfo.GetValue(property.serializedObject.targetObject);
+
             EditorGUILayout.BeginVertical(GUI.skin.box);
             CacheVariables(property, target);
             DrawProperties(property);
@@ -51,7 +56,8 @@ namespace Studio.ShortSleeve.UnityObservables
             // Cache properties needed for reflection 
             if (_eventField == null)
             {
-                _eventField = Common.GetField(target.GetType(), Common.EventField,
+                _eventField = Common.GetField(target.GetType(),
+                    Common.EventField,
                     BindingFlags.Instance | BindingFlags.NonPublic);
             }
 
@@ -64,7 +70,8 @@ namespace Studio.ShortSleeve.UnityObservables
 
             if (RaiseMethodInfo == null)
             {
-                RaiseMethodInfo = Common.GetMethod(target.GetType(), Common.RaiseMethod,
+                RaiseMethodInfo = Common.GetMethod(target.GetType(),
+                    Common.RaiseMethod,
                     BindingFlags.Instance | BindingFlags.NonPublic);
             }
 
@@ -109,11 +116,17 @@ namespace Studio.ShortSleeve.UnityObservables
             if (!Application.isPlaying)
                 return;
 
+            // Make sure we have a Serializable parameter with visible fields
+            bool isVoid = target is EventVoid;
+            if (!isVoid && (_raisePayloadProperty == null || !_raisePayloadProperty.hasVisibleChildren))
+                return;
+
+            // Draw label
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Raise", EditorStyles.boldLabel);
 
             // Draw payload field if needed
-            if (target is not EventVoid)
+            if (!isVoid)
             {
                 EditorGUI.BeginChangeCheck();
                 property.serializedObject.UpdateIfRequiredOrScript();

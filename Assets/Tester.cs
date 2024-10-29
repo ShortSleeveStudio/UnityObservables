@@ -5,8 +5,8 @@ public class Tester : MonoBehaviour
 {
     [SerializeField] private EventAssetVoid eventAssetVoid;
     [SerializeField] private ObservableAssetInt observableAssetInt;
-    [SerializeReference] private EventVoid eventVoid = new();
-    [SerializeReference] private ObservableInt observableInt = new();
+    [SerializeField] private EventVoid eventVoid;
+    [SerializeField] private ObservableInt observableInt; 
 
     private float _timeSinceLastRaise;
 
