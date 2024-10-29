@@ -133,13 +133,10 @@ namespace Studio.ShortSleeve.UnityObservables
 
         public static SerializedProperty FindProperty(this SerializedProperty property, string name)
         {
-            IEnumerator enumerator = property.GetEnumerator();
-            while (enumerator.MoveNext())
+            foreach (SerializedProperty child in property.Copy()) 
             {
-                if (enumerator.Current is SerializedProperty prop && prop.name == name)
-                {
-                    return prop;
-                }
+                if (child.name == name)
+                    return child;
             }
 
             return null;
