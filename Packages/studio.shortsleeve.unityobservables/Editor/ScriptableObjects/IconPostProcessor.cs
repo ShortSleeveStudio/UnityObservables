@@ -38,8 +38,9 @@ namespace Studio.ShortSleeve.UnityObservables
                             observables.Add(monoImporter);
                         }
                     }
-
-                    else if (IsSubclassOfRawGeneric(monoScript.GetClass(), typeof(EventAssetBase<>)))
+                    else if (
+                        IsSubclassOfRawGeneric(monoScript.GetClass(), typeof(EventAssetBase<>))
+                    )
                     {
                         if (monoImporter.GetIcon() != eventIcon)
                         {

@@ -8,9 +8,12 @@ namespace Studio.ShortSleeve.UnityObservables
     {
         #region Inspector
 
-        [SerializeField] private string developerNotes;
+        [SerializeField]
+        private string developerNotes;
+
 #if UNITY_EDITOR
-        [SerializeField] private TPayload raisePayload; // custom editor, don't change name
+        [SerializeField]
+        private TPayload raisePayload; // custom editor, don't change name
 #endif
 
         #endregion
@@ -18,7 +21,6 @@ namespace Studio.ShortSleeve.UnityObservables
         #region Protected Properties
 
         protected readonly Event<TPayload> Event = new(); // custom editor, don't change name
-
         #endregion
 
         #region Public API

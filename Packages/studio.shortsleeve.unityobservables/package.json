@@ -5,9 +5,10 @@
     "name": "Short Sleeve Studio",
     "url": "https://github.com/ShortSleeveStudio/UnityObservables"
   },
-  "version": "0.0.0",
+  "version": "0.0.1",
   "unity": "2021.2",
-  "description": "Events and observables implemented as ScriptableObjects and SerializedReferences.",
+  "description": "Events and observables implemented as ScriptableObjects, SerializedReferences, and Serialized fields.",
+  "hideInEditor": false,
   "keywords": [
     "event",
     "observable",

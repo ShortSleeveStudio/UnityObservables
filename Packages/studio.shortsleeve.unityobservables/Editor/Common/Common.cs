@@ -22,29 +22,33 @@ namespace Studio.ShortSleeve.UnityObservables
 
         #region Draw Helpers
 
-        public static void DrawEventHandlers(ref PropertyInfo eventHandlerPropertyInfo,
+        public static void DrawEventHandlers(
+            ref PropertyInfo eventHandlerPropertyInfo,
             FieldInfo eventHandlerListField,
-            FieldInfo eventField, object target)
+            FieldInfo eventField,
+            object target
+        )
         {
             if (eventHandlerListField == null)
             {
                 EditorGUILayout.HelpBox(
                     "The name of the subscriber list field in EventBus.cs was renamed without a corresponding name change in its custom editor.",
-                    MessageType.Error);
+                    MessageType.Error
+                );
                 return;
             }
 
             if (!Application.isPlaying)
                 return;
 
-
             // Subscriber list header
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Subscribers", EditorStyles.boldLabel);
 
             // Grab event handler list
-            IList eventHandlerList = (IList)eventHandlerListField.GetValue(eventField.GetValue(target)) ??
-                                     Array.Empty<object>();
+            IList eventHandlerList =
+                (IList)eventHandlerListField.GetValue(eventField.GetValue(target))
+                ?? Array.Empty<object>();
 
             // Explain if the list is empty
             if (eventHandlerList.Count == 0)
@@ -60,12 +64,16 @@ namespace Studio.ShortSleeve.UnityObservables
             EditorGUILayout.EndVertical();
         }
 
-        private static void DrawEventHandlerPingButton(ref PropertyInfo eventHandlerPropertyInfo, object eventHandler)
+        private static void DrawEventHandlerPingButton(
+            ref PropertyInfo eventHandlerPropertyInfo,
+            object eventHandler
+        )
         {
             // Cache EventHandlerWrapper property info
             if (eventHandlerPropertyInfo == null)
             {
-                eventHandlerPropertyInfo = eventHandler.GetType()
+                eventHandlerPropertyInfo = eventHandler
+                    .GetType()
                     .GetProperty(IDField, BindingFlags.Instance | BindingFlags.Public);
             }
 
@@ -73,7 +81,8 @@ namespace Studio.ShortSleeve.UnityObservables
             {
                 EditorGUILayout.HelpBox(
                     "The name of the EventHandlerWrapper ID field in EventHandlerWrapper.cs was renamed without a corresponding name change in its custom editor.",
-                    MessageType.Error);
+                    MessageType.Error
+                );
                 return;
             }
 
@@ -133,7 +142,7 @@ namespace Studio.ShortSleeve.UnityObservables
 
         public static SerializedProperty FindProperty(this SerializedProperty property, string name)
         {
-            foreach (SerializedProperty child in property.Copy()) 
+            foreach (SerializedProperty child in property.Copy())
             {
                 if (child.name == name)
                     return child;

@@ -74,7 +74,10 @@ namespace Studio.ShortSleeve.UnityObservables
         }
 
         public bool Equals(EventHandlerWrapper<TPayload> other) => Equals(ID, other.ID);
-        public override bool Equals(object obj) => obj is EventHandlerWrapper<TPayload> other && Equals(other);
+
+        public override bool Equals(object obj) =>
+            obj is EventHandlerWrapper<TPayload> other && Equals(other);
+
         public override int GetHashCode() => ID.GetHashCode();
 
         public void HandleEvent(TPayload payload)

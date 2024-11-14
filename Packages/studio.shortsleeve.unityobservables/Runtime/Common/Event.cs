@@ -31,7 +31,6 @@ namespace Studio.ShortSleeve.UnityObservables
             _eventHandlerList.Clear();
         }
 
-
         public void Raise(TPayload payload)
         {
             for (int i = SubscriptionCount - 1; i >= 0; i--)
@@ -42,25 +41,29 @@ namespace Studio.ShortSleeve.UnityObservables
 
         public void Subscribe(EventHandler handler)
         {
-            if (IsSubscribed(handler)) return;
+            if (IsSubscribed(handler))
+                return;
             SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
         }
 
         public void Subscribe(EventHandler<TPayload> handler)
         {
-            if (IsSubscribed(handler)) return;
+            if (IsSubscribed(handler))
+                return;
             SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
         }
 
         public void Subscribe(IEventHandler handler)
         {
-            if (IsSubscribed(handler)) return;
+            if (IsSubscribed(handler))
+                return;
             SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
         }
 
         public void Subscribe(IEventHandler<TPayload> handler)
         {
-            if (IsSubscribed(handler)) return;
+            if (IsSubscribed(handler))
+                return;
             SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
         }
 
@@ -84,7 +87,8 @@ namespace Studio.ShortSleeve.UnityObservables
 
         private void UnsubscribeInternal(object handler)
         {
-            if (!IsSubscribed(handler)) return;
+            if (!IsSubscribed(handler))
+                return;
             EventHandlerWrapper<TPayload> wrapper = _eventHandlerMap[handler];
             _eventHandlerMap.Remove(handler);
             _eventHandlerList.Remove(wrapper);

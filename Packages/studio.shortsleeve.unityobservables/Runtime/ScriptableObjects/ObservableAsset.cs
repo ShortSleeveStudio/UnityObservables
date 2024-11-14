@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Studio.ShortSleeve.UnityObservables
 {
@@ -9,15 +8,17 @@ namespace Studio.ShortSleeve.UnityObservables
         // The editor value doesn't change at runtime
         // We'll hide this at runtime, show it during edit time
         // We'll also change the name to "Value"
-        [SerializeField] protected TPayload editorValue;
+        [SerializeField]
+        protected TPayload editorValue;
 
         // The runtime value does change at runtime
         // We'll show this at runtime, hide it during edit time
-        [SerializeField] protected TPayload runtimeValue;
+        [SerializeField]
+        protected TPayload runtimeValue;
 
         // Tracks whether the runtime value has been initialized
-        [NonSerialized] private bool _isRuntimeValueInitialized;
-
+        [NonSerialized]
+        private bool _isRuntimeValueInitialized;
 
         #region Unity Lifecycle
 

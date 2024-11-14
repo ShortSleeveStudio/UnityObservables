@@ -29,7 +29,10 @@ namespace Studio.ShortSleeve.UnityObservables
                 _eventHandlerIntValue = payload;
                 _eventHandlerIntCalled = true;
             };
-            _eventHandlerVoid = () => { _eventHandlerVoidCalled = true; };
+            _eventHandlerVoid = () =>
+            {
+                _eventHandlerVoidCalled = true;
+            };
         }
 
         [Test]
@@ -67,7 +70,7 @@ namespace Studio.ShortSleeve.UnityObservables
             _eventAssetInt.Subscribe(_eventHandlerInterfaceInt);
             _eventAssetInt.Raise(setValue);
 
-            // Verify 
+            // Verify
             Assert.AreEqual(true, _eventHandlerIntCalled);
             Assert.AreEqual(true, _eventHandlerInterfaceInt.Invoked);
             Assert.AreEqual(setValue, EventHandlerIntValue);
@@ -136,7 +139,9 @@ namespace Studio.ShortSleeve.UnityObservables
         {
             private bool _invoked;
             public bool Invoked => _invoked;
+
             public void Reset() => _invoked = false;
+
             public void HandleEvent() => _invoked = true;
         }
 

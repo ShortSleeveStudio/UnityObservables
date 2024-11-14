@@ -32,7 +32,7 @@ namespace Studio.ShortSleeve.UnityObservables
             // Field Title
             EditorGUILayout.LabelField(property.displayName, EditorStyles.boldLabel);
 
-            // Grab target. We distinguish between SerializedReference and generic serialization. 
+            // Grab target. We distinguish between SerializedReference and generic serialization.
             object target;
             if (property.propertyType == SerializedPropertyType.ManagedReference)
                 target = property.boxedValue;
@@ -42,7 +42,12 @@ namespace Studio.ShortSleeve.UnityObservables
             EditorGUILayout.BeginVertical(GUI.skin.box);
             CacheVariables(property, target);
             DrawProperties(property);
-            Common.DrawEventHandlers(ref _eventHandlerPropertyInfo, _eventHandlerListField, _eventField, target);
+            Common.DrawEventHandlers(
+                ref _eventHandlerPropertyInfo,
+                _eventHandlerListField,
+                _eventField,
+                target
+            );
             DrawRaiseButton(property, target);
             EditorGUILayout.EndVertical();
 
@@ -53,26 +58,32 @@ namespace Studio.ShortSleeve.UnityObservables
 
         private void CacheVariables(SerializedProperty property, object target)
         {
-            // Cache properties needed for reflection 
+            // Cache properties needed for reflection
             if (_eventField == null)
             {
-                _eventField = Common.GetField(target.GetType(),
+                _eventField = Common.GetField(
+                    target.GetType(),
                     Common.EventField,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             if (_eventField != null && _eventHandlerListField == null)
             {
-                _eventHandlerListField = Common.GetField(_eventField.GetValue(target).GetType(),
+                _eventHandlerListField = Common.GetField(
+                    _eventField.GetValue(target).GetType(),
                     Common.EventHandlerListField,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             if (RaiseMethodInfo == null)
             {
-                RaiseMethodInfo = Common.GetMethod(target.GetType(),
+                RaiseMethodInfo = Common.GetMethod(
+                    target.GetType(),
                     Common.RaiseMethod,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             // Cache properties needed for drawing properties out of order
@@ -101,8 +112,11 @@ namespace Studio.ShortSleeve.UnityObservables
             EditorGUI.BeginChangeCheck();
             property.serializedObject.UpdateIfRequiredOrScript();
 
+            int depthLimit = property.depth + 1;
             foreach (SerializedProperty child in property.Copy())
             {
+                if (depthLimit != child.depth)
+                    continue;
                 if (!DidCustomizeProperty(child))
                     EditorGUILayout.PropertyField(child);
             }
@@ -118,7 +132,10 @@ namespace Studio.ShortSleeve.UnityObservables
 
             // Make sure we have a Serializable parameter with visible fields
             bool isVoid = target is EventVoid;
-            if (!isVoid && (_raisePayloadProperty == null || !_raisePayloadProperty.hasVisibleChildren))
+            if (
+                !isVoid
+                && (_raisePayloadProperty == null || !_raisePayloadProperty.hasVisibleChildren)
+            )
                 return;
 
             // Draw label

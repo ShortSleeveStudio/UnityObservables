@@ -6,7 +6,8 @@ namespace Studio.ShortSleeve.UnityObservables
     [Serializable]
     public class Observable<TPayload> : EventGeneric<TPayload>
     {
-        [SerializeField] protected TPayload value;
+        [SerializeField]
+        protected TPayload value;
 
         #region Public API
 

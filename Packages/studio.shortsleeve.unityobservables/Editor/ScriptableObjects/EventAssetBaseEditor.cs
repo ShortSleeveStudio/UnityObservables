@@ -29,21 +29,29 @@ namespace Studio.ShortSleeve.UnityObservables
             // Cache fields needed for reflection
             if (_eventField == null)
             {
-                _eventField = Common.GetField(target.GetType(), Common.EventField,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                _eventField = Common.GetField(
+                    target.GetType(),
+                    Common.EventField,
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             if (_eventField != null && _eventHandlerListField == null)
             {
-                _eventHandlerListField = Common.GetField(_eventField.GetValue(target).GetType(),
+                _eventHandlerListField = Common.GetField(
+                    _eventField.GetValue(target).GetType(),
                     Common.EventHandlerListField,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             if (RaiseMethodInfo == null)
             {
-                RaiseMethodInfo = Common.GetMethod(target.GetType(), Common.RaiseMethod,
-                    BindingFlags.Instance | BindingFlags.NonPublic);
+                RaiseMethodInfo = Common.GetMethod(
+                    target.GetType(),
+                    Common.RaiseMethod,
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
 
             // Cache properties needed for drawing properties out of order
@@ -51,7 +59,6 @@ namespace Studio.ShortSleeve.UnityObservables
             {
                 _raisePayloadProperty = serializedObject.FindProperty(Common.RaisePayloadField);
             }
-
 
             // Styles
             _labelColorNormal = new();
@@ -67,7 +74,12 @@ namespace Studio.ShortSleeve.UnityObservables
         public override void OnInspectorGUI()
         {
             DrawProperties();
-            Common.DrawEventHandlers(ref _eventHandlerPropertyInfo, _eventHandlerListField, _eventField, target);
+            Common.DrawEventHandlers(
+                ref _eventHandlerPropertyInfo,
+                _eventHandlerListField,
+                _eventField,
+                target
+            );
             DrawRaiseButton();
         }
 
@@ -91,7 +103,6 @@ namespace Studio.ShortSleeve.UnityObservables
             serializedObject.ApplyModifiedProperties();
             EditorGUI.EndChangeCheck();
         }
-
 
         protected virtual void DrawRaiseButton()
         {
