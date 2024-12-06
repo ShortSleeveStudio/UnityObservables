@@ -1,9 +1,7 @@
 {
-    "name": "Studio.ShortSleeve.UnityObservables.Runtime.SerializableObjects",
+    "name": "UnityObservables.Common",
     "rootNamespace": "Studio.ShortSleeve.UnityObservables",
-    "references": [
-        "GUID:21ff6d69eb88718459be4ef3d5b59b9e"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

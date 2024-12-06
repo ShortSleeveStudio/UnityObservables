@@ -1,5 +1,5 @@
 {
-    "name": "Studio.ShortSleeve.UnityObservables.Editor.SerializedReferences",
+    "name": "UnityObservables.SerializedReferences.Editor",
     "rootNamespace": "Studio.ShortSleeve.UnityObservables",
     "references": [
         "GUID:66e7445cc455d3a4496f031f96ecf850",
