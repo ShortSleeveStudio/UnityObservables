@@ -266,6 +266,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "studio.shortsleeve.unityobservables": {
+      "version": "file:studio.shortsleeve.unityobservables",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

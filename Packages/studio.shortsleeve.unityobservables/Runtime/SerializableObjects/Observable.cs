@@ -14,7 +14,7 @@ namespace Studio.ShortSleeve.UnityObservables
         public virtual bool AreValuesEqual(TPayload first, TPayload second)
         {
             if (first == null)
-                return second != null;
+                return second == null;
             return first.Equals(second);
         }
 
