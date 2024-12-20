@@ -34,7 +34,10 @@ namespace Studio.ShortSleeve.UnityObservables
 
             // Grab target. We distinguish between SerializedReference and generic serialization.
             object target;
-            if (property.propertyType == SerializedPropertyType.ManagedReference)
+            if (
+                property.propertyType == SerializedPropertyType.ManagedReference
+                || property.propertyType == SerializedPropertyType.Generic
+            )
                 target = property.boxedValue;
             else
                 target = fieldInfo.GetValue(property.serializedObject.targetObject);
