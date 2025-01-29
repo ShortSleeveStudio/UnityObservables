@@ -32,15 +32,10 @@ namespace Studio.ShortSleeve.UnityObservables
             // Field Title
             EditorGUILayout.LabelField(property.displayName, EditorStyles.boldLabel);
 
-            // Grab target. We distinguish between SerializedReference and generic serialization.
-            object target;
-            if (
-                property.propertyType == SerializedPropertyType.ManagedReference
-                || property.propertyType == SerializedPropertyType.Generic
-            )
+            // Grab target
+            object target = fieldInfo.GetValue(property.serializedObject.targetObject);
+            if (target == null)
                 target = property.boxedValue;
-            else
-                target = fieldInfo.GetValue(property.serializedObject.targetObject);
 
             EditorGUILayout.BeginVertical(GUI.skin.box);
             CacheVariables(property, target);
