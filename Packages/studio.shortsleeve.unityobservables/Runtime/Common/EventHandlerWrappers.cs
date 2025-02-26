@@ -3,48 +3,55 @@ using System;
 namespace Studio.ShortSleeve.UnityObservables
 {
     // We're jumping through some hoops here to limit allocations to the list/dict combination in EventBus.
-    public readonly struct EventHandlerWrapper<TPayload> : IEquatable<EventHandlerWrapper<TPayload>>
+    public readonly struct EventHandlerWrapper<TPayload>
+        : IEquatable<EventHandlerWrapper<TPayload>>,
+            IComparable<EventHandlerWrapper<TPayload>>
     {
         private readonly EventHandler _handlerDelegateVoid;
         private readonly EventHandler<TPayload> _handlerDelegateGeneric;
         private readonly IEventHandler _handlerInterfaceVoid;
         private readonly IEventHandler<TPayload> _handlerInterfaceGeneric;
         private readonly EventHandlerType _type;
+        private readonly int _priority;
 
-        internal EventHandlerWrapper(EventHandler handler)
+        internal EventHandlerWrapper(EventHandler handler, int priority)
         {
             _type = EventHandlerType.DelegateVoid;
             _handlerDelegateVoid = handler;
             _handlerDelegateGeneric = null;
             _handlerInterfaceVoid = null;
             _handlerInterfaceGeneric = null;
+            _priority = priority;
         }
 
-        internal EventHandlerWrapper(EventHandler<TPayload> handler)
+        internal EventHandlerWrapper(EventHandler<TPayload> handler, int priority)
         {
             _type = EventHandlerType.DelegateGeneric;
             _handlerDelegateVoid = null;
             _handlerDelegateGeneric = handler;
             _handlerInterfaceVoid = null;
             _handlerInterfaceGeneric = null;
+            _priority = priority;
         }
 
-        internal EventHandlerWrapper(IEventHandler handler)
+        internal EventHandlerWrapper(IEventHandler handler, int priority)
         {
             _type = EventHandlerType.InterfaceVoid;
             _handlerDelegateVoid = null;
             _handlerDelegateGeneric = null;
             _handlerInterfaceVoid = handler;
             _handlerInterfaceGeneric = null;
+            _priority = priority;
         }
 
-        internal EventHandlerWrapper(IEventHandler<TPayload> handler)
+        internal EventHandlerWrapper(IEventHandler<TPayload> handler, int priority)
         {
             _type = EventHandlerType.InterfaceGeneric;
             _handlerDelegateVoid = null;
             _handlerDelegateGeneric = null;
             _handlerInterfaceVoid = null;
             _handlerInterfaceGeneric = handler;
+            _priority = priority;
         }
 
         public object ID // custom editor, don't change name
@@ -64,6 +71,8 @@ namespace Studio.ShortSleeve.UnityObservables
                 }
             }
         }
+
+        public int Priority => _priority;
 
         private enum EventHandlerType
         {
@@ -98,5 +107,8 @@ namespace Studio.ShortSleeve.UnityObservables
                     break;
             }
         }
+
+        public int CompareTo(EventHandlerWrapper<TPayload> other) =>
+            _priority.CompareTo(other._priority);
     }
 }

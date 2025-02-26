@@ -39,32 +39,32 @@ namespace Studio.ShortSleeve.UnityObservables
             }
         }
 
-        public void Subscribe(EventHandler handler)
+        public void Subscribe(EventHandler handler, int priority)
         {
             if (IsSubscribed(handler))
                 return;
-            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
+            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler, priority));
         }
 
-        public void Subscribe(EventHandler<TPayload> handler)
+        public void Subscribe(EventHandler<TPayload> handler, int priority)
         {
             if (IsSubscribed(handler))
                 return;
-            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
+            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler, priority));
         }
 
-        public void Subscribe(IEventHandler handler)
+        public void Subscribe(IEventHandler handler, int priority)
         {
             if (IsSubscribed(handler))
                 return;
-            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
+            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler, priority));
         }
 
-        public void Subscribe(IEventHandler<TPayload> handler)
+        public void Subscribe(IEventHandler<TPayload> handler, int priority)
         {
             if (IsSubscribed(handler))
                 return;
-            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler));
+            SubscribeInternal(new EventHandlerWrapper<TPayload>(handler, priority));
         }
 
         public void Unsubscribe(EventHandler handler) => UnsubscribeInternal(handler);
@@ -82,7 +82,7 @@ namespace Studio.ShortSleeve.UnityObservables
         private void SubscribeInternal(EventHandlerWrapper<TPayload> handlerWrapper)
         {
             _eventHandlerMap[handlerWrapper.ID] = handlerWrapper;
-            _eventHandlerList.Add(handlerWrapper);
+            AddToSubscriberList(handlerWrapper);
         }
 
         private void UnsubscribeInternal(object handler)
@@ -91,10 +91,29 @@ namespace Studio.ShortSleeve.UnityObservables
                 return;
             EventHandlerWrapper<TPayload> wrapper = _eventHandlerMap[handler];
             _eventHandlerMap.Remove(handler);
-            _eventHandlerList.Remove(wrapper);
+            RemoveFromSubscriberList(wrapper);
         }
 
         private bool IsSubscribed(object handler) => _eventHandlerMap.ContainsKey(handler);
+
+        private void AddToSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)
+        {
+            if (_eventHandlerList.Count == 0)
+                _eventHandlerList.Add(handlerWrapper);
+            else
+            {
+                int index = _eventHandlerList.BinarySearch(handlerWrapper);
+                if (index < 0)
+                    _eventHandlerList.Insert(~index, handlerWrapper);
+            }
+        }
+
+        private void RemoveFromSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)
+        {
+            int index = _eventHandlerList.BinarySearch(handlerWrapper);
+            if (index >= 0)
+                _eventHandlerList.RemoveAt(index);
+        }
 
         #endregion
     }
