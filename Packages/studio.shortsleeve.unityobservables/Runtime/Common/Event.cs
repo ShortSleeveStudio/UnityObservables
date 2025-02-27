@@ -98,14 +98,8 @@ namespace Studio.ShortSleeve.UnityObservables
 
         private void AddToSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)
         {
-            if (_eventHandlerList.Count == 0)
-                _eventHandlerList.Add(handlerWrapper);
-            else
-            {
-                int index = _eventHandlerList.BinarySearch(handlerWrapper);
-                if (index < 0)
-                    _eventHandlerList.Insert(~index, handlerWrapper);
-            }
+            int index = _eventHandlerList.BinarySearch(handlerWrapper);
+            _eventHandlerList.Insert(index < 0 ? ~index : index, handlerWrapper);
         }
 
         private void RemoveFromSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)

@@ -3,10 +3,17 @@ using UnityEngine;
 
 public class Tester : MonoBehaviour
 {
-    [SerializeField] private EventAssetVoid eventAssetVoid;
-    [SerializeField] private ObservableAssetInt observableAssetInt;
-    [SerializeField] private EventVoid eventVoid;
-    [SerializeField] private ObservableInt observableInt; 
+    [SerializeField]
+    private EventAssetVoid eventAssetVoid;
+
+    [SerializeField]
+    private ObservableAssetInt observableAssetInt;
+
+    [SerializeField]
+    private EventVoid eventVoid;
+
+    [SerializeField]
+    private ObservableInt observableInt;
 
     private float _timeSinceLastRaise;
 
@@ -16,6 +23,7 @@ public class Tester : MonoBehaviour
         eventAssetVoid.Subscribe(OnEventAssetVoidFired);
         observableInt.Subscribe(OnObservableIntFired);
         eventVoid.Subscribe(OnEventVoidFired);
+        eventVoid.Subscribe(OnEventVoidFiredDuplicate);
     }
 
     void OnDisable()
@@ -24,6 +32,7 @@ public class Tester : MonoBehaviour
         eventAssetVoid.Unsubscribe(OnEventAssetVoidFired);
         observableInt.Unsubscribe(OnObservableIntFired);
         eventVoid.Unsubscribe(OnEventVoidFired);
+        eventVoid.Unsubscribe(OnEventVoidFiredDuplicate);
     }
 
     void Update()
@@ -51,6 +60,11 @@ public class Tester : MonoBehaviour
     void OnEventVoidFired()
     {
         Debug.Log("EventVoid fired");
+    }
+
+    void OnEventVoidFiredDuplicate()
+    {
+        Debug.Log("EventVoid Duplicate Subscription fired");
     }
 
     public void OnObservableIntFired(int value)
