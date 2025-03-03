@@ -306,23 +306,17 @@ MonoBehaviour:
   eventAssetVoid: {fileID: 11400000, guid: 33922558453d3de49a711f97db0be57e, type: 2}
   observableAssetInt: {fileID: 11400000, guid: ae9e07eac15c7664b8b5188c2c668793, type: 2}
   eventVoid:
-    rid: 8736006361635880964
+    developerNotes: 
+    raisePayload: 0
   observableInt:
-    rid: 8736006361635880965
-  references:
-    version: 2
-    RefIds:
-    - rid: 8736006361635880964
-      type: {class: EventVoid, ns: Studio.ShortSleeve.UnityObservables, asm: Studio.ShortSleeve.UnityObservables.Runtime.SerializedReferences}
-      data:
-        developerNotes: 
-        raisePayload: 0
-    - rid: 8736006361635880965
-      type: {class: ObservableInt, ns: Studio.ShortSleeve.UnityObservables, asm: Studio.ShortSleeve.UnityObservables.Runtime.SerializedReferences}
-      data:
-        developerNotes: 
-        raisePayload: 0
-        value: 25
+    developerNotes: 
+    raisePayload: 0
+    value: 0
+  testSubObject:
+  - testSub:
+      developerNotes: 
+      raisePayload: 0
+      value: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

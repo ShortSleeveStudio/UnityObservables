@@ -1,3 +1,4 @@
+using System;
 using Studio.ShortSleeve.UnityObservables;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class Tester : MonoBehaviour
     [SerializeField]
     private ObservableInt observableInt;
 
+    [SerializeField]
+    private SubObject[] testSubObject;
+
     private float _timeSinceLastRaise;
 
     void OnEnable()
@@ -24,6 +28,8 @@ public class Tester : MonoBehaviour
         observableInt.Subscribe(OnObservableIntFired);
         eventVoid.Subscribe(OnEventVoidFired);
         eventVoid.Subscribe(OnEventVoidFiredDuplicate);
+        for (int i = 0; i < testSubObject.Length; i++)
+            testSubObject[i].testSub.Subscribe(OnSubObjectChange);
     }
 
     void OnDisable()
@@ -33,6 +39,8 @@ public class Tester : MonoBehaviour
         observableInt.Unsubscribe(OnObservableIntFired);
         eventVoid.Unsubscribe(OnEventVoidFired);
         eventVoid.Unsubscribe(OnEventVoidFiredDuplicate);
+        for (int i = 0; i < testSubObject.Length; i++)
+            testSubObject[i].testSub.Unsubscribe(OnSubObjectChange);
     }
 
     void Update()
@@ -41,10 +49,18 @@ public class Tester : MonoBehaviour
         {
             observableAssetInt.Value++;
             observableInt.Value++;
+            for (int i = 0; i < testSubObject.Length; i++)
+                testSubObject[i].testSub.Value++;
+
             _timeSinceLastRaise = 0;
         }
 
         _timeSinceLastRaise += Time.deltaTime;
+    }
+
+    void OnSubObjectChange(int value)
+    {
+        Debug.Log($"Sub Object Value {value}");
     }
 
     void OnEventAssetVoidFired()
@@ -70,5 +86,11 @@ public class Tester : MonoBehaviour
     public void OnObservableIntFired(int value)
     {
         Debug.Log("Observable: " + value);
+    }
+
+    [Serializable]
+    public class SubObject
+    {
+        public ObservableInt testSub;
     }
 }

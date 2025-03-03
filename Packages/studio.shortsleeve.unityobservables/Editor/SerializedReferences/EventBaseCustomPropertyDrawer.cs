@@ -1,4 +1,8 @@
+using System;
+using System.Collections;
+using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -33,9 +37,7 @@ namespace Studio.ShortSleeve.UnityObservables
             EditorGUILayout.LabelField(property.displayName, EditorStyles.boldLabel);
 
             // Grab target
-            object target = fieldInfo.GetValue(property.serializedObject.targetObject);
-            if (target == null)
-                target = property.boxedValue;
+            object target = property.GetValue<object>();
 
             EditorGUILayout.BeginVertical(GUI.skin.box);
             CacheVariables(property, target);
