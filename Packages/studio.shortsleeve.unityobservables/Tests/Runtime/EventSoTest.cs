@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     public class EventSoTest
     {

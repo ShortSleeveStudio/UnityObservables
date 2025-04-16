@@ -1,6 +1,6 @@
 using System;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     // We're jumping through some hoops here to limit allocations to the list/dict combination in EventBus.
     public readonly struct EventHandlerWrapper<TPayload>

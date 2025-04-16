@@ -1,74 +1,48 @@
-using System;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
-    public abstract class ObservableAsset<TPayload> : EventAssetGeneric<TPayload>
+    public abstract class ObservableAsset<TPayload> : ScriptableObject
     {
-        // The editor value doesn't change at runtime
-        // We'll hide this at runtime, show it during edit time
-        // We'll also change the name to "Value"
+        #region Inspector
         [SerializeField]
-        protected TPayload editorValue;
+        Observable<TPayload> Observable;
+        #endregion
 
-        // The runtime value does change at runtime
-        // We'll show this at runtime, hide it during edit time
-        [SerializeField]
-        protected TPayload runtimeValue;
-
-        // Tracks whether the runtime value has been initialized
-        [NonSerialized]
-        private bool _isRuntimeValueInitialized;
-
-        #region Unity Lifecycle
-
-        void OnEnable() => EnsureInitialized();
-
+        #region Public Properties
+        public string DeveloperNotes
+        {
+            get => Observable.DeveloperNotes;
+            set => Observable.DeveloperNotes = value;
+        }
         #endregion
 
         #region Public API
+        public int SubscriptionCount => Observable.SubscriptionCount;
 
-        public virtual bool AreValuesEqual(TPayload first, TPayload second)
-        {
-            if (first == null)
-                return second == null;
-            return first.Equals(second);
-        }
+        public void ClearSubscriptions() => Observable.ClearSubscriptions();
+
+        public void Raise(TPayload payload) => Observable.Raise(payload);
+
+        public void Subscribe(EventHandler<TPayload> handler) => Subscribe(handler, 0);
+
+        public void Subscribe(EventHandler<TPayload> handler, int priority) =>
+            Observable.Subscribe(handler, priority);
+
+        public void Subscribe(IEventHandler<TPayload> handler) => Subscribe(handler, 0);
+
+        public void Subscribe(IEventHandler<TPayload> handler, int priority) =>
+            Observable.Subscribe(handler, priority);
+
+        public void Unsubscribe(EventHandler<TPayload> handler) => Observable.Unsubscribe(handler);
+
+        public void Unsubscribe(IEventHandler<TPayload> handler) => Observable.Unsubscribe(handler);
 
         public TPayload Value
         {
-            get
-            {
-                EnsureInitialized();
-                return runtimeValue;
-            }
-            set
-            {
-                EnsureInitialized();
-                if (AreValuesEqual(runtimeValue, value) || !Application.isPlaying)
-                    return;
-                runtimeValue = value;
-                Raise(runtimeValue);
-            }
+            get => Observable.Value;
+            set => Observable.Value = value;
         }
-
-        #endregion
-
-        #region Private API
-
-        private void EnsureInitialized()
-        {
-            if (_isRuntimeValueInitialized)
-                return;
-            _isRuntimeValueInitialized = true;
-            runtimeValue = editorValue;
-        }
-
-#if UNITY_EDITOR
-        // custom editor, don't change name
-        protected override void RaiseFromEditor() => Event.Raise(runtimeValue);
-#endif
-
         #endregion
     }
 }

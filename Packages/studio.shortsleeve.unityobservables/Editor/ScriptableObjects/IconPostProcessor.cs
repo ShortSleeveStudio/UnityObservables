@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     internal class IconPostProcessor : AssetPostprocessor
     {
@@ -31,7 +31,8 @@ namespace Studio.ShortSleeve.UnityObservables
                 if (AssetImporter.GetAtPath(importedAssetPath) is MonoImporter monoImporter)
                 {
                     MonoScript monoScript = monoImporter.GetScript();
-                    if (IsSubclassOfRawGeneric(monoScript.GetClass(), typeof(ObservableAsset<>)))
+                    Type type = monoScript.GetClass();
+                    if (IsSubclassOfRawGeneric(type, typeof(ObservableAsset<>)))
                     {
                         if (monoImporter.GetIcon() != observableIcon)
                         {
@@ -39,7 +40,8 @@ namespace Studio.ShortSleeve.UnityObservables
                         }
                     }
                     else if (
-                        IsSubclassOfRawGeneric(monoScript.GetClass(), typeof(EventAssetBase<>))
+                        IsSubclassOfRawGeneric(type, typeof(EventAssetGeneric<,>))
+                        || IsSubclassOfRawGeneric(type, typeof(EventVoid))
                     )
                     {
                         if (monoImporter.GetIcon() != eventIcon)

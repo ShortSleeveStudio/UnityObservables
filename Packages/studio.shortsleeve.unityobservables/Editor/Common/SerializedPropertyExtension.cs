@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEditor;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     public static class SerializedPropertyExtension
     {
@@ -86,7 +86,8 @@ namespace Studio.ShortSleeve.UnityObservables
                 | BindingFlags.NonPublic
         )
         {
-            FieldInfo field = obj.GetType().GetField(fieldName, bindings);
+            FieldInfo field = Common.GetField(obj.GetType(), fieldName, bindings);
+
             if (field != null)
             {
                 return field.GetValue(obj);
@@ -105,7 +106,7 @@ namespace Studio.ShortSleeve.UnityObservables
                 | BindingFlags.NonPublic
         )
         {
-            FieldInfo field = obj.GetType().GetField(fieldName, bindings);
+            FieldInfo field = Common.GetField(obj.GetType(), fieldName, bindings);
             if (field != null)
             {
                 object list = field.GetValue(obj);
@@ -133,7 +134,7 @@ namespace Studio.ShortSleeve.UnityObservables
                 | BindingFlags.NonPublic
         )
         {
-            FieldInfo field = obj.GetType().GetField(fieldName, bindings);
+            FieldInfo field = Common.GetField(obj.GetType(), fieldName, bindings);
             if (field != null)
             {
                 field.SetValue(obj, value);
@@ -155,7 +156,7 @@ namespace Studio.ShortSleeve.UnityObservables
                 | BindingFlags.NonPublic
         )
         {
-            FieldInfo field = obj.GetType().GetField(fieldName, bindings);
+            FieldInfo field = Common.GetField(obj.GetType(), fieldName, bindings);
             if (field != null)
             {
                 object list = field.GetValue(obj);

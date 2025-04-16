@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [Serializable]
     public abstract class EventBase<TPayload>
@@ -9,7 +9,7 @@ namespace Studio.ShortSleeve.UnityObservables
         #region Inspector
 
         [SerializeField]
-        private string developerNotes;
+        public string DeveloperNotes;
 
 #if UNITY_EDITOR
         [SerializeField]
@@ -19,7 +19,6 @@ namespace Studio.ShortSleeve.UnityObservables
         #endregion
 
         #region Protected Properties
-
         protected readonly Event<TPayload> Event = new(); // custom editor, don't change name
         #endregion
 

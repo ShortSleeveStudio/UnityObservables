@@ -1,4 +1,4 @@
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     public delegate void EventHandler();
 

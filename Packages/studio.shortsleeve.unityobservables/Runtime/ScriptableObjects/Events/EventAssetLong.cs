@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(fileName = "EventLong", menuName = "Unity Observables/Create EventLong")]
-    public class EventAssetLong : EventAssetGeneric<long> { }
+    public class EventAssetLong : EventAssetGeneric<EventLong, long> { }
 }

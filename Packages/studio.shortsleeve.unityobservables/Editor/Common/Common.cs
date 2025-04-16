@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     public static class Common
     {
@@ -14,8 +14,10 @@ namespace Studio.ShortSleeve.UnityObservables
         public const string EventField = "Event";
         public const string ScriptField = "m_Script";
         public const string RaiseMethod = "RaiseFromEditor";
+        public const string EnsureInitializedMethod = "EnsureInitialized";
         public const string EventHandlerListField = "_eventHandlerList";
         public const string RaisePayloadField = "raisePayload";
+        public const string EventGenericField = "@event";
 
         #endregion
 

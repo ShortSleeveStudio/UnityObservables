@@ -1,9 +1,8 @@
 {
-    "name": "UnityObservables.ScriptableObjects.Editor",
-    "rootNamespace": "Studio.ShortSleeve.UnityObservables",
+    "name": "UnityObservables.Editor",
+    "rootNamespace": "UnityObservables",
     "references": [
-        "GUID:66e7445cc455d3a4496f031f96ecf850",
-        "GUID:01826909fee83d14993700a83eefafc4"
+        "GUID:da53c572fb9164342be4479be91e08cd"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,10 +1,11 @@
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
-    [CustomEditor(typeof(ObservableAsset<>), true)]
-    public class ObservableAssetEditor : EventAssetBaseEditor
+    [CustomPropertyDrawer(typeof(Observable<>), true)]
+    public class ObservableCustomPropertyDrawer : EventBaseCustomPropertyDrawer
     {
         #region Constants
 
@@ -16,14 +17,18 @@ namespace Studio.ShortSleeve.UnityObservables
         #region Cached
 
         private static readonly GUIContent ValueLabel = new("Value");
+        private MethodInfo EnsureInitializedMethodInfo;
 
         #endregion
 
         #region Draw Methods
 
-        protected override bool DidCustomizeProperty(SerializedProperty serializedProperty)
+        protected override bool DidCustomizeProperty(
+            SerializedProperty serializedProperty,
+            object target
+        )
         {
-            if (serializedProperty.propertyPath == Common.ScriptField)
+            if (serializedProperty.propertyPath.EndsWith(Common.ScriptField))
             {
                 EditorGUI.BeginDisabledGroup(true);
                 EditorGUILayout.PropertyField(serializedProperty);
@@ -31,21 +36,24 @@ namespace Studio.ShortSleeve.UnityObservables
                 return true;
             }
 
-            if (serializedProperty.propertyPath == EditorValueField)
+            if (serializedProperty.propertyPath.EndsWith(EditorValueField))
             {
                 if (!Application.isPlaying)
                     EditorGUILayout.PropertyField(serializedProperty, ValueLabel);
                 return true;
             }
 
-            if (serializedProperty.propertyPath == RuntimeValueField)
+            if (serializedProperty.propertyPath.EndsWith(RuntimeValueField))
             {
                 if (Application.isPlaying)
+                {
+                    EnsureInitializedMethodInfo.Invoke(target, null);
                     EditorGUILayout.PropertyField(serializedProperty, ValueLabel);
+                }
                 return true;
             }
 
-            if (serializedProperty.propertyPath == Common.RaisePayloadField)
+            if (serializedProperty.propertyPath.EndsWith(Common.RaisePayloadField))
             {
                 return true;
             }
@@ -53,7 +61,7 @@ namespace Studio.ShortSleeve.UnityObservables
             return false;
         }
 
-        protected override void DrawRaiseButton()
+        protected override void DrawRaiseButton(SerializedProperty property, object target)
         {
             if (!Application.isPlaying)
                 return;
@@ -64,6 +72,23 @@ namespace Studio.ShortSleeve.UnityObservables
             if (GUILayout.Button("Raise"))
             {
                 RaiseMethodInfo.Invoke(target, null);
+            }
+        }
+
+        #endregion
+
+        #region Protected API
+
+        protected override void CacheVariables(SerializedProperty property, object target)
+        {
+            base.CacheVariables(property, target);
+            if (EnsureInitializedMethodInfo == null)
+            {
+                EnsureInitializedMethodInfo = Common.GetMethod(
+                    target.GetType(),
+                    Common.EnsureInitializedMethod,
+                    BindingFlags.Instance | BindingFlags.NonPublic
+                );
             }
         }
 

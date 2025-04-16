@@ -1,6 +1,6 @@
 using System;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [Serializable]
     public class EventBool : EventGeneric<bool> { }

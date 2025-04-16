@@ -1,11 +1,10 @@
 {
     "name": "UnityObservables.Tests",
-    "rootNamespace": "Studio.ShortSleeve.UnityObservables",
+    "rootNamespace": "UnityObservables",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "UnityObservables.ScriptableObjects",
-        "UnityObservables.Common"
+        "UnityObservables"
     ],
     "includePlatforms": [
         "Editor"

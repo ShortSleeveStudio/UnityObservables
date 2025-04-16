@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(fileName = "EventBool", menuName = "Unity Observables/Create EventBool")]
-    public class EventAssetBool : EventAssetGeneric<bool> { }
+    public class EventAssetBool : EventAssetGeneric<EventBool, bool> { }
 }

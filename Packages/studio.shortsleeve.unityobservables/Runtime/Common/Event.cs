@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     /// <summary>
     /// The Event is an internal class that satisfies the same function as a C# event. The only differences are:

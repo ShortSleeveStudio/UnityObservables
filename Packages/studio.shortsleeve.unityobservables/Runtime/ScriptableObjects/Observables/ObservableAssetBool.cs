@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(
         fileName = "ObservableBool",

@@ -311,12 +311,34 @@ MonoBehaviour:
   observableInt:
     developerNotes: 
     raisePayload: 0
-    value: 0
+    editorValue: 100
+    runtimeValue: 0
   testSubObject:
   - testSub:
       developerNotes: 
       raisePayload: 0
-      value: 0
+      editorValue: 0
+      runtimeValue: 0
+  - testSub:
+      developerNotes: 
+      raisePayload: 0
+      editorValue: 0
+      runtimeValue: 0
+  - testSub:
+      developerNotes: 
+      raisePayload: 0
+      editorValue: 0
+      runtimeValue: 0
+  - testSub:
+      developerNotes: 
+      raisePayload: 0
+      editorValue: 0
+      runtimeValue: 0
+  - testSub:
+      developerNotes: 
+      raisePayload: 0
+      editorValue: 0
+      runtimeValue: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

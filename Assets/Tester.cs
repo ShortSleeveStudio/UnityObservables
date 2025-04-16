@@ -1,6 +1,6 @@
 using System;
-using Studio.ShortSleeve.UnityObservables;
 using UnityEngine;
+using UnityObservables;
 
 public class Tester : MonoBehaviour
 {
@@ -9,6 +9,9 @@ public class Tester : MonoBehaviour
 
     [SerializeField]
     private ObservableAssetInt observableAssetInt;
+
+    [SerializeField]
+    private EventInt eventInt;
 
     [SerializeField]
     private EventVoid eventVoid;
@@ -26,6 +29,7 @@ public class Tester : MonoBehaviour
         observableAssetInt.Subscribe(OnObservableAssetFired);
         eventAssetVoid.Subscribe(OnEventAssetVoidFired);
         observableInt.Subscribe(OnObservableIntFired);
+        eventInt.Subscribe(OnEventIntFired);
         eventVoid.Subscribe(OnEventVoidFired);
         eventVoid.Subscribe(OnEventVoidFiredDuplicate);
         for (int i = 0; i < testSubObject.Length; i++)
@@ -37,6 +41,7 @@ public class Tester : MonoBehaviour
         observableAssetInt.Unsubscribe(OnObservableAssetFired);
         eventAssetVoid.Unsubscribe(OnEventAssetVoidFired);
         observableInt.Unsubscribe(OnObservableIntFired);
+        eventInt.Unsubscribe(OnEventIntFired);
         eventVoid.Unsubscribe(OnEventVoidFired);
         eventVoid.Unsubscribe(OnEventVoidFiredDuplicate);
         for (int i = 0; i < testSubObject.Length; i++)
@@ -71,6 +76,11 @@ public class Tester : MonoBehaviour
     void OnObservableAssetFired(int value)
     {
         Debug.Log("ObservableAsset: " + value);
+    }
+
+    void OnEventIntFired(int i)
+    {
+        Debug.Log("Int Event " + i);
     }
 
     void OnEventVoidFired()

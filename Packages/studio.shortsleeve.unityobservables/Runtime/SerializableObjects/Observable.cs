@@ -1,13 +1,25 @@
 using System;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [Serializable]
     public class Observable<TPayload> : EventGeneric<TPayload>
     {
+        // The editor value doesn't change at runtime
+        // We'll hide this at runtime, show it during edit time
+        // We'll also change the name to "Value"
         [SerializeField]
-        protected TPayload value;
+        protected TPayload editorValue;
+
+        // The runtime value does change at runtime
+        // We'll show this at runtime, hide it during edit time
+        [SerializeField]
+        protected TPayload runtimeValue;
+
+        // Tracks whether the runtime value has been initialized
+        [NonSerialized]
+        private bool _isRuntimeValueInitialized;
 
         #region Public API
 
@@ -20,13 +32,18 @@ namespace Studio.ShortSleeve.UnityObservables
 
         public TPayload Value
         {
-            get => value;
+            get
+            {
+                EnsureInitialized();
+                return runtimeValue;
+            }
             set
             {
-                if (AreValuesEqual(this.value, value) || !Application.isPlaying)
+                EnsureInitialized();
+                if (AreValuesEqual(runtimeValue, value) || !Application.isPlaying)
                     return;
-                this.value = value;
-                Raise(this.value);
+                runtimeValue = value;
+                Raise(runtimeValue);
             }
         }
 
@@ -34,9 +51,17 @@ namespace Studio.ShortSleeve.UnityObservables
 
         #region Private API
 
+        private void EnsureInitialized()
+        {
+            if (_isRuntimeValueInitialized)
+                return;
+            _isRuntimeValueInitialized = true;
+            runtimeValue = editorValue;
+        }
+
 #if UNITY_EDITOR
         // custom editor, don't change name
-        protected override void RaiseFromEditor() => Event.Raise(value);
+        protected override void RaiseFromEditor() => Event.Raise(runtimeValue);
 #endif
 
         #endregion

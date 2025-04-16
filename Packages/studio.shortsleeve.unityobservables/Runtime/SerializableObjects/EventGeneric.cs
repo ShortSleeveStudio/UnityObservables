@@ -1,6 +1,6 @@
 using System;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [Serializable]
     public abstract class EventGeneric<TPayload> : EventBase<TPayload>

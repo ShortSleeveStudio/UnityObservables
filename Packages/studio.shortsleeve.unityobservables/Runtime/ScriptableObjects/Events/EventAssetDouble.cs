@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(fileName = "EventDouble", menuName = "Unity Observables/Create EventDouble")]
-    public class EventAssetDouble : EventAssetGeneric<double> { }
+    public class EventAssetDouble : EventAssetGeneric<EventDouble, double> { }
 }

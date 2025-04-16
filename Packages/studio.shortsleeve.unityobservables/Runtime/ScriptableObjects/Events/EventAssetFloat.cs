@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(fileName = "EventFloat", menuName = "Unity Observables/Create EventFloat")]
-    public class EventAssetFloat : EventAssetGeneric<float> { }
+    public class EventAssetFloat : EventAssetGeneric<EventFloat, float> { }
 }

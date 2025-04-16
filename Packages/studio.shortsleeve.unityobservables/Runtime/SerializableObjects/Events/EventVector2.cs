@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [Serializable]
     public class EventVector2 : EventGeneric<Vector2> { }

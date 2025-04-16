@@ -1,11 +1,29 @@
 using UnityEngine;
 
-namespace Studio.ShortSleeve.UnityObservables
+namespace UnityObservables
 {
     [CreateAssetMenu(fileName = "EventVoid", menuName = "Unity Observables/Create EventVoid")]
-    public class EventAssetVoid : EventAssetBase<bool>
+    public class EventAssetVoid : ScriptableObject
     {
-        public void Raise() => Event.Raise(default);
+        #region Inspector
+        [SerializeField]
+        EventVoid Event = new();
+        #endregion
+
+        #region Public Properties
+        public string DeveloperNotes
+        {
+            get => Event.DeveloperNotes;
+            set => Event.DeveloperNotes = value;
+        }
+        #endregion
+
+        #region Public API
+        public int SubscriptionCount => Event.SubscriptionCount;
+
+        public void ClearSubscriptions() => Event.ClearSubscriptions();
+
+        public void Raise() => Event.Raise();
 
         public void Subscribe(EventHandler handler) => Subscribe(handler, 0);
 
@@ -20,5 +38,6 @@ namespace Studio.ShortSleeve.UnityObservables
         public void Unsubscribe(EventHandler handler) => Event.Unsubscribe(handler);
 
         public void Unsubscribe(IEventHandler handler) => Event.Unsubscribe(handler);
+        #endregion
     }
 }
