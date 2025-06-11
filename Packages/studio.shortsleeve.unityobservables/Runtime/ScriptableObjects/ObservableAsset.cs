@@ -22,7 +22,7 @@ namespace UnityObservables
 
         public void ClearSubscriptions() => Observable.ClearSubscriptions();
 
-        public void Raise(TPayload payload) => Observable.Raise(payload);
+        public void Raise() => Observable.Raise();
 
         public void Subscribe(EventHandler<TPayload> handler) => Subscribe(handler, 0);
 

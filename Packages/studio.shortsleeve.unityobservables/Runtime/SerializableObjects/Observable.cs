@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UnityObservables
 {
     [Serializable]
-    public class Observable<TPayload> : EventGeneric<TPayload>
+    public class Observable<TPayload> : EventBase<TPayload>
     {
         // The editor value doesn't change at runtime
         // We'll hide this at runtime, show it during edit time
@@ -43,9 +43,25 @@ namespace UnityObservables
                 if (AreValuesEqual(runtimeValue, value) || !Application.isPlaying)
                     return;
                 runtimeValue = value;
-                Raise(runtimeValue);
+                Event.Raise(runtimeValue);
             }
         }
+
+        public void Raise() => Event.Raise(Value);
+
+        public void Subscribe(EventHandler<TPayload> handler) => Subscribe(handler, 0);
+
+        public void Subscribe(EventHandler<TPayload> handler, int priority) =>
+            Event.Subscribe(handler, priority);
+
+        public void Subscribe(IEventHandler<TPayload> handler) => Subscribe(handler, 0);
+
+        public void Subscribe(IEventHandler<TPayload> handler, int priority) =>
+            Event.Subscribe(handler, priority);
+
+        public void Unsubscribe(EventHandler<TPayload> handler) => Event.Unsubscribe(handler);
+
+        public void Unsubscribe(IEventHandler<TPayload> handler) => Event.Unsubscribe(handler);
 
         public void SubscribeAndTrigger(EventHandler<TPayload> handler)
         {
