@@ -47,6 +47,30 @@ namespace UnityObservables
             }
         }
 
+        public void SubscribeAndTrigger(EventHandler<TPayload> handler)
+        {
+            Subscribe(handler, 0);
+            handler.Invoke(Value);
+        }
+
+        public void SubscribeAndTrigger(EventHandler<TPayload> handler, int priority)
+        {
+            Subscribe(handler, priority);
+            handler.Invoke(Value);
+        }
+
+        public void SubscribeAndTrigger(IEventHandler<TPayload> handler)
+        {
+            Subscribe(handler, 0);
+            handler.HandleEvent(Value);
+        }
+
+        public void SubscribeAndTrigger(IEventHandler<TPayload> handler, int priority)
+        {
+            Subscribe(handler, priority);
+            handler.HandleEvent(Value);
+        }
+
         #endregion
 
         #region Private API

@@ -34,6 +34,30 @@ namespace UnityObservables
         public void Subscribe(IEventHandler<TPayload> handler, int priority) =>
             Observable.Subscribe(handler, priority);
 
+        public void SubscribeAndTrigger(EventHandler<TPayload> handler)
+        {
+            Subscribe(handler, 0);
+            handler.Invoke(Value);
+        }
+
+        public void SubscribeAndTrigger(EventHandler<TPayload> handler, int priority)
+        {
+            Subscribe(handler, priority);
+            handler.Invoke(Value);
+        }
+
+        public void SubscribeAndTrigger(IEventHandler<TPayload> handler)
+        {
+            Subscribe(handler, 0);
+            handler.HandleEvent(Value);
+        }
+
+        public void SubscribeAndTrigger(IEventHandler<TPayload> handler, int priority)
+        {
+            Subscribe(handler, priority);
+            handler.HandleEvent(Value);
+        }
+
         public void Unsubscribe(EventHandler<TPayload> handler) => Observable.Unsubscribe(handler);
 
         public void Unsubscribe(IEventHandler<TPayload> handler) => Observable.Unsubscribe(handler);

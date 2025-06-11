@@ -26,7 +26,7 @@ public class Tester : MonoBehaviour
 
     void OnEnable()
     {
-        observableAssetInt.Subscribe(OnObservableAssetFired);
+        observableAssetInt.SubscribeAndTrigger(OnObservableAssetFired);
         eventAssetVoid.Subscribe(OnEventAssetVoidFired);
         observableInt.Subscribe(OnObservableIntFired);
         eventInt.Subscribe(OnEventIntFired);
