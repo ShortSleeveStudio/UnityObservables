@@ -26,8 +26,11 @@ namespace UnityObservables
 
         public virtual bool AreValuesEqual(TPayload first, TPayload second)
         {
-            if (first == null)
-                return second == null;
+            if (!typeof(TPayload).IsValueType)
+            {
+                if (first == null)
+                    return second == null;
+            }
             return EqualityComparer<TPayload>.Default.Equals(first, second);
         }
 
