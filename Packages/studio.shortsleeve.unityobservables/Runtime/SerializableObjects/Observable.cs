@@ -27,7 +27,7 @@ namespace UnityObservables
         {
             if (first == null)
                 return second == null;
-            return first.Equals(second);
+            return EqualityComparer<TPayload>.Default.Equals(first, second);
         }
 
         public TPayload Value
