@@ -98,15 +98,21 @@ namespace UnityObservables
 
         private void AddToSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)
         {
+            // Maintain sorted order by priority
             int index = _eventHandlerList.BinarySearch(handlerWrapper);
             _eventHandlerList.Insert(index < 0 ? ~index : index, handlerWrapper);
         }
 
         private void RemoveFromSubscriberList(EventHandlerWrapper<TPayload> handlerWrapper)
         {
-            int index = _eventHandlerList.BinarySearch(handlerWrapper);
-            if (index >= 0)
-                _eventHandlerList.RemoveAt(index);
+            for (int i = _eventHandlerList.Count - 1; i >= 0; i--)
+            {
+                if (ReferenceEquals(_eventHandlerList[i].ID, handlerWrapper.ID))
+                {
+                    _eventHandlerList.RemoveAt(i);
+                    return;
+                }
+            }
         }
 
         #endregion
